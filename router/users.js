@@ -1,3 +1,4 @@
+const { application } = require('express')
 const express = require('express')
 const controller=require('../controller/users')
 
@@ -13,5 +14,6 @@ function set() {
 }
 
 module.exports={
-       set
+       set,
+       notfound: controller.notfound
 }

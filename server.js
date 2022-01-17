@@ -4,7 +4,15 @@ const router=require('./router/users')
 const app = express();
 //middleware
 app.use(express.json())
+
+
 app.use('/api', router.set())
+
+//Rutas no implementadas
+app.get('*', router.notfound)
+app.put('*', router.notfound)
+app.post('*', router.notfound)
+app.delete('*', router.notfound)
 
 const PORT=8080
 app.listen(PORT,err=>{
