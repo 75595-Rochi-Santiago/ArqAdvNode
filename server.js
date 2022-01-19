@@ -1,10 +1,11 @@
 const express = require('express')
 const router=require('./router/users')
+const compression=require('compression')
 
 const app = express();
 //middleware
 app.use(express.json())
-
+app.use(compression())
 
 app.use('/api', router.set())
 
